@@ -8,4 +8,6 @@ This is the server for [Unity MOBA](https://github.com/exmex/UnityMoba)
 ![ServerSelect](Images/ServerSelect.png)
 
 # Status
-[x] Login
+- [x] Login
+- [ ] Battles
+- [ ] Shop
