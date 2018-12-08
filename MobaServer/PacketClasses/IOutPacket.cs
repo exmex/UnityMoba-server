@@ -2,9 +2,18 @@ using Newtonsoft.Json.Linq;
 
 namespace MobaServer.Packets
 {
-    public interface IOutPacket
+    public abstract class IOutPacket
     {
-        JObject GetContent();
-        byte[] GetData();
+        public abstract JObject GetContent();
+
+        public virtual byte[] GetData()
+        {
+            return new byte[0];
+        }
+
+        public override string ToString()
+        {
+            return GetContent().ToString();
+        }
     }
 }
