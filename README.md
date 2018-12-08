@@ -4,8 +4,8 @@ This is the server for [Unity MOBA](https://github.com/exmex/UnityMoba)
 
 # Unity MOBA Images
 
-![Lobby](Doc/Lobby.png)
-![ServerSelect](Doc/ServerSelect.png)
+![Lobby](Images/Lobby.png)
+![ServerSelect](Images/ServerSelect.png)
 
 # Status
 [x] Login
