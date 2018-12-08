@@ -26,10 +26,4 @@ namespace MobaServer
             throw new System.NotImplementedException();
         }
     }
-
-    public interface ISerializable
-    {
-        JObject Serialize();
-        void Deserialize(JObject content);
-    }
 }

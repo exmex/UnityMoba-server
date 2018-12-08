@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Client.cs" />
+    <Compile Include="PacketClasses\ISerializable.cs" />
     <Compile Include="PacketClasses\TGNetService.cs" />
     <Compile Include="PacketClasses\UTGNetServicePool.cs" />
     <Compile Include="Packets\Auth.cs" />
