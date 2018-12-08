@@ -61,6 +61,7 @@
     <Compile Include="Packets\RequestMyselfApplyingGuilds.cs" />
     <Compile Include="Packets\RequestMyselfGuildDetail.cs" />
     <Compile Include="Packets\RequestMyselfPreparingGuildDetail.cs" />
+    <Compile Include="Packets\RequestOpenGrowUpChest.cs" />
     <Compile Include="Packets\RequestPlayerBattleStats.cs" />
     <Compile Include="Packets\RequestPlayerBountyInfo.cs" />
     <Compile Include="Packets\RequestPlayerDeck.cs" />

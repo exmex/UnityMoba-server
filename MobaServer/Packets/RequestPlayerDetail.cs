@@ -25,6 +25,10 @@ namespace MobaServer.Packets
                         new JProperty("RunePiece", 999999),
                         new JProperty("GuildCoin", 999999),
                         new JProperty("Voucher", 999999),
+                        new JProperty("DailyActivePoint", 1),
+                        new JProperty("DailyOpenedGrowUpChestIds", new JArray()),
+                        new JProperty("WeeklyActivePoint", 1),
+                        new JProperty("WeeklyOpenedGrowUpChestIds", new JArray()),
                         new JProperty("NextFirstWinTime", DateTime.Now.ToString("o"))
                     )
                 )

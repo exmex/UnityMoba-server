@@ -19,7 +19,20 @@ JProperty.New("Category",0xffffffffffff))
                 )),
                 new JProperty("RoleProficiencys", new JArray()),
                 new JProperty("Equips", new JArray()),
-                new JProperty("Items", new JArray()),
+                new JProperty("Items", new JArray(
+                    new JObject(
+                        new JProperty("Id", "1"),
+                        new JProperty("Name", "Test"),
+                        new JProperty("Icon", "1"),
+                        new JProperty("Quality", 1),
+                        new JProperty("Type", 1), // 7,8,13,14,15,17
+                        new JProperty("Desc", "Testing"),
+                        new JProperty("Amount", 1),
+                        new JProperty("Param",
+                            new JArray()
+                        )
+                    )
+                )),
                 new JProperty("Skills", new JArray()),
                 new JProperty("SkillBehaviours", new JArray()),
                 new JProperty("Runes", new JArray()),
@@ -50,13 +63,25 @@ JProperty.New("Category",0xffffffffffff))
                             new JProperty("Level", 1),
                             new JProperty("NextExp", 10000),
                             new JProperty("IsPowerful", true),
-                            new JProperty("Rewards", new JArray())
+                            new JProperty("Rewards", new JArray(
+                                    new JObject(
+                                        new JProperty("Id", 1),
+                                        new JProperty("Amount", 1)
+                                    )
+                                )
+                            )
                         ),
                         new JObject(
                             new JProperty("Level", 2),
                             new JProperty("NextExp", 20000),
                             new JProperty("IsPowerful", true),
-                            new JProperty("Rewards", new JArray())
+                            new JProperty("Rewards", new JArray(
+                                    new JObject(
+                                        new JProperty("Id", 1),
+                                        new JProperty("Amount", 1)
+                                    )
+                                )
+                            )
                         )
                     )
                 ),
@@ -66,7 +91,38 @@ JProperty.New("Category",0xffffffffffff))
                 new JProperty("MailInfos", new JArray()),
                 new JProperty("BattleHonors", new JArray()),
                 new JProperty("GrowUps", new JArray()),
-                new JProperty("GrowUpChests", new JArray()),
+                new JProperty("GrowUpChests", new JArray(
+                    new JObject(
+                        new JProperty("Id", 1),
+                        new JProperty("Type", 1), // 1 = Day, 2 = Week
+                        new JProperty("ActivePoint", 1),
+                        new JProperty("RewardId", 1)
+                    ),
+                    new JObject(
+                        new JProperty("Id", 2),
+                        new JProperty("Type", 2), // 1 = Day, 2 = Week
+                        new JProperty("ActivePoint", 1),
+                        new JProperty("RewardId", 1)
+                    ),
+                    new JObject(
+                        new JProperty("Id", 3),
+                        new JProperty("Type", 2), // 1 = Day, 2 = Week
+                        new JProperty("ActivePoint", 1),
+                        new JProperty("RewardId", 1)
+                    ),
+                    new JObject(
+                        new JProperty("Id", 4),
+                        new JProperty("Type", 2), // 1 = Day, 2 = Week
+                        new JProperty("ActivePoint", 1),
+                        new JProperty("RewardId", 1)
+                    ),
+                    new JObject(
+                        new JProperty("Id", 5),
+                        new JProperty("Type", 2), // 1 = Day, 2 = Week
+                        new JProperty("ActivePoint", 1),
+                        new JProperty("RewardId", 1)
+                    )
+                )),
                 new JProperty("AvatarFrames", new JArray()),
                 new JProperty("Bounties", new JArray(
                         new JObject(
@@ -77,13 +133,22 @@ JProperty.New("Category",0xffffffffffff))
                     )
                 ),
                 new JProperty("DropGroups", new JArray()),
-                new JProperty("EntModes", new JObject(
-                        new JProperty("StartEnd", new JObject(
-                                new JProperty("Start", DateTime.Now.ToString("o")),
-                                new JProperty("End", DateTime.Now.AddMinutes(20).ToString("o"))
-                            )
-                        ),
-                        new JProperty("OpenDesc", "Test")
+                new JProperty("EntModes", // Entertainment Modes
+                    new JArray(
+                        new JObject(
+                            new JProperty("Id", 1),
+                            new JProperty("Category", 1),
+                            new JProperty("StartEnd", new JArray(
+                                    (object) new JArray(
+                                        // It ignores day and month, and only looks at weekday (*)
+                                        // when it's * it is only dependend on the hour. If its a proper weekday (1-7) it looks if it is that day
+                                        DateTime.Now.AddHours(-1).ToString("ss mm HH dd MM *"),
+                                        DateTime.Now.AddHours(1).ToString("ss mm HH dd MM *")
+                                    )
+                                )
+                            ),
+                            new JProperty("OpenDesc", "Test")
+                        )
                     )
                 ),
                 new JProperty("GuildIcons", new JArray()),

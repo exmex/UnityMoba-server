@@ -75,7 +75,9 @@ namespace MobaServer.Packets
                     )
                 ),
                 new JProperty("PlayerGain",
-                    new JArray(
+                    new JObject(
+                        new JProperty("BattleCoinWeekly", 1),
+                        new JProperty("BattleCoinWeeklyLimit", 1)
                     )
                 ),
                 new JProperty("PlayerAvatarFrames",
