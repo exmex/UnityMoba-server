@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E16D3C4F-E7D3-4DDB-B6BE-2491D7EC1FEE}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MobaServer</RootNamespace>
+    <AssemblyName>MobaServer</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Client.cs" />
+    <Compile Include="PacketClasses\TGNetService.cs" />
+    <Compile Include="PacketClasses\UTGNetServicePool.cs" />
+    <Compile Include="Packets\Auth.cs" />
+    <Compile Include="Packets\Beat.cs" />
+    <Compile Include="Packets\Login.cs" />
+    <Compile Include="Packets\RequestAddOnlineStatus.cs" />
+    <Compile Include="Packets\RequestConfig.cs" />
+    <Compile Include="Packets\RequestCreateParty.cs" />
+    <Compile Include="Packets\RequestCreateRoom.cs" />
+    <Compile Include="Packets\RequestCurrentActivity.cs" />
+    <Compile Include="Packets\RequestCurrentSeasonInfo.cs" />
+    <Compile Include="Packets\RequestFriendList.cs" />
+    <Compile Include="Packets\RequestGuildInvitationHistory.cs" />
+    <Compile Include="Packets\RequestMailList.cs" />
+    <Compile Include="Packets\RequestMyselfApplyingGuilds.cs" />
+    <Compile Include="Packets\RequestMyselfGuildDetail.cs" />
+    <Compile Include="Packets\RequestMyselfPreparingGuildDetail.cs" />
+    <Compile Include="Packets\RequestPlayerBattleStats.cs" />
+    <Compile Include="Packets\RequestPlayerBountyInfo.cs" />
+    <Compile Include="Packets\RequestPlayerDeck.cs" />
+    <Compile Include="Packets\RequestPlayerDetail.cs" />
+    <Compile Include="Packets\RequestRecentGradeBattleLog.cs" />
+    <Compile Include="Packets\RequestReconnectStage.cs" />
+    <Compile Include="Packets\RequestSendPublicChatMessage.cs" />
+    <Compile Include="Packets\RequestServerList.cs" />
+    <Compile Include="Packets\RequestServerRanks.cs" />
+    <Compile Include="Packets\RequestTemplate.cs" />
+    <Compile Include="Packets\RequestUnreadMailCount.cs" />
+    <Compile Include="Packets\RequestUpdateAccountServer.cs" />
+    <Compile Include="Packets\RequestValidLimitFreeRoleList.cs" />
+    <Compile Include="Packets\RequestVersion.cs" />
+    <Compile Include="Player.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Role.cs" />
+    <Compile Include="SampleData.cs" />
+    <Compile Include="SharpZipLib\BZip2\BZip2.cs" />
+    <Compile Include="SharpZipLib\BZip2\BZip2Constants.cs" />
+    <Compile Include="SharpZipLib\BZip2\BZip2Exception.cs" />
+    <Compile Include="SharpZipLib\BZip2\BZip2InputStream.cs" />
+    <Compile Include="SharpZipLib\BZip2\BZip2OutputStream.cs" />
+    <Compile Include="SharpZipLib\Checksums\Adler32.cs" />
+    <Compile Include="SharpZipLib\Checksums\CRC32.cs" />
+    <Compile Include="SharpZipLib\Checksums\IChecksum.cs" />
+    <Compile Include="SharpZipLib\Checksums\StrangeCRC.cs" />
+    <Compile Include="SharpZipLib\Core\FileSystemScanner.cs" />
+    <Compile Include="SharpZipLib\Core\INameTransform.cs" />
+    <Compile Include="SharpZipLib\Core\IScanFilter.cs" />
+    <Compile Include="SharpZipLib\Core\NameFilter.cs" />
+    <Compile Include="SharpZipLib\Core\PathFilter.cs" />
+    <Compile Include="SharpZipLib\Core\StreamUtils.cs" />
+    <Compile Include="SharpZipLib\Core\WindowsPathUtils.cs" />
+    <Compile Include="SharpZipLib\Encryption\PkzipClassic.cs" />
+    <Compile Include="SharpZipLib\Encryption\ZipAESStream.cs" />
+    <Compile Include="SharpZipLib\Encryption\ZipAESTransform.cs" />
+    <Compile Include="SharpZipLib\GZip\GZIPConstants.cs" />
+    <Compile Include="SharpZipLib\GZip\GZipException.cs" />
+    <Compile Include="SharpZipLib\GZip\GzipInputStream.cs" />
+    <Compile Include="SharpZipLib\GZip\GzipOutputStream.cs" />
+    <Compile Include="SharpZipLib\Lzw\LzwConstants.cs" />
+    <Compile Include="SharpZipLib\Lzw\LzwException.cs" />
+    <Compile Include="SharpZipLib\Lzw\LzwInputStream.cs" />
+    <Compile Include="SharpZipLib\SharpZipBaseException.cs" />
+    <Compile Include="SharpZipLib\Tar\InvalidHeaderException.cs" />
+    <Compile Include="SharpZipLib\Tar\TarArchive.cs" />
+    <Compile Include="SharpZipLib\Tar\TarBuffer.cs" />
+    <Compile Include="SharpZipLib\Tar\TarEntry.cs" />
+    <Compile Include="SharpZipLib\Tar\TarException.cs" />
+    <Compile Include="SharpZipLib\Tar\TarHeader.cs" />
+    <Compile Include="SharpZipLib\Tar\TarInputStream.cs" />
+    <Compile Include="SharpZipLib\Tar\TarOutputStream.cs" />
+    <Compile Include="SharpZipLib\Zip\Compression\Deflater.cs" />
+    <Compile Include="SharpZipLib\Zip\Compression\DeflaterConstants.cs" />
+    <Compile Include="SharpZipLib\Zip\Compression\DeflaterEngine.cs" />
+    <Compile Include="SharpZipLib\Zip\Compression\DeflaterHuffman.cs" />
+    <Compile Include="SharpZipLib\Zip\Compression\DeflaterPending.cs" />
+    <Compile Include="SharpZipLib\Zip\Compression\Inflater.cs" />
+    <Compile Include="SharpZipLib\Zip\Compression\InflaterDynHeader.cs" />
+    <Compile Include="SharpZipLib\Zip\Compression\InflaterHuffmanTree.cs" />
+    <Compile Include="SharpZipLib\Zip\Compression\PendingBuffer.cs" />
+    <Compile Include="SharpZipLib\Zip\Compression\Streams\DeflaterOutputStream.cs" />
+    <Compile Include="SharpZipLib\Zip\Compression\Streams\InflaterInputStream.cs" />
+    <Compile Include="SharpZipLib\Zip\Compression\Streams\OutputWindow.cs" />
+    <Compile Include="SharpZipLib\Zip\Compression\Streams\StreamManipulator.cs" />
+    <Compile Include="SharpZipLib\Zip\FastZip.cs" />
+    <Compile Include="SharpZipLib\Zip\IEntryFactory.cs" />
+    <Compile Include="SharpZipLib\Zip\WindowsNameTransform.cs" />
+    <Compile Include="SharpZipLib\Zip\ZipConstants.cs" />
+    <Compile Include="SharpZipLib\Zip\ZipEntry.cs" />
+    <Compile Include="SharpZipLib\Zip\ZipEntryFactory.cs" />
+    <Compile Include="SharpZipLib\Zip\ZipException.cs" />
+    <Compile Include="SharpZipLib\Zip\ZipExtraData.cs" />
+    <Compile Include="SharpZipLib\Zip\ZipFile.cs" />
+    <Compile Include="SharpZipLib\Zip\ZipHelperStream.cs" />
+    <Compile Include="SharpZipLib\Zip\ZipInputStream.cs" />
+    <Compile Include="SharpZipLib\Zip\ZipNameTransform.cs" />
+    <Compile Include="SharpZipLib\Zip\ZipOutputStream.cs" />
+    <Compile Include="Utils.cs" />
+    <Compile Include="PacketClasses\IOutPacket.cs" />
+    <Compile Include="PacketClasses\Packet.cs" />
+    <Compile Include="PacketClasses\PacketAttribute.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SharpZipLib\BZip2.meta" />
+    <Content Include="SharpZipLib\BZip2\BZip2.cs.meta" />
+    <Content Include="SharpZipLib\BZip2\BZip2Constants.cs.meta" />
+    <Content Include="SharpZipLib\BZip2\BZip2Exception.cs.meta" />
+    <Content Include="SharpZipLib\BZip2\BZip2InputStream.cs.meta" />
+    <Content Include="SharpZipLib\BZip2\BZip2OutputStream.cs.meta" />
+    <Content Include="SharpZipLib\Checksums.meta" />
+    <Content Include="SharpZipLib\Checksums\Adler32.cs.meta" />
+    <Content Include="SharpZipLib\Checksums\CRC32.cs.meta" />
+    <Content Include="SharpZipLib\Checksums\IChecksum.cs.meta" />
+    <Content Include="SharpZipLib\Checksums\StrangeCRC.cs.meta" />
+    <Content Include="SharpZipLib\Core.meta" />
+    <Content Include="SharpZipLib\Core\FileSystemScanner.cs.meta" />
+    <Content Include="SharpZipLib\Core\INameTransform.cs.meta" />
+    <Content Include="SharpZipLib\Core\IScanFilter.cs.meta" />
+    <Content Include="SharpZipLib\Core\NameFilter.cs.meta" />
+    <Content Include="SharpZipLib\Core\PathFilter.cs.meta" />
+    <Content Include="SharpZipLib\Core\StreamUtils.cs.meta" />
+    <Content Include="SharpZipLib\Core\WindowsPathUtils.cs.meta" />
+    <Content Include="SharpZipLib\Encryption.meta" />
+    <Content Include="SharpZipLib\Encryption\PkzipClassic.cs.meta" />
+    <Content Include="SharpZipLib\Encryption\ZipAESStream.cs.meta" />
+    <Content Include="SharpZipLib\Encryption\ZipAESTransform.cs.meta" />
+    <Content Include="SharpZipLib\GZip.meta" />
+    <Content Include="SharpZipLib\GZip\GZIPConstants.cs.meta" />
+    <Content Include="SharpZipLib\GZip\GZipException.cs.meta" />
+    <Content Include="SharpZipLib\GZip\GzipInputStream.cs.meta" />
+    <Content Include="SharpZipLib\GZip\GzipOutputStream.cs.meta" />
+    <Content Include="SharpZipLib\Lzw.meta" />
+    <Content Include="SharpZipLib\Lzw\LzwConstants.cs.meta" />
+    <Content Include="SharpZipLib\Lzw\LzwException.cs.meta" />
+    <Content Include="SharpZipLib\Lzw\LzwInputStream.cs.meta" />
+    <Content Include="SharpZipLib\SharpZipBaseException.cs.meta" />
+    <Content Include="SharpZipLib\Tar.meta" />
+    <Content Include="SharpZipLib\Tar\InvalidHeaderException.cs.meta" />
+    <Content Include="SharpZipLib\Tar\TarArchive.cs.meta" />
+    <Content Include="SharpZipLib\Tar\TarBuffer.cs.meta" />
+    <Content Include="SharpZipLib\Tar\TarEntry.cs.meta" />
+    <Content Include="SharpZipLib\Tar\TarException.cs.meta" />
+    <Content Include="SharpZipLib\Tar\TarHeader.cs.meta" />
+    <Content Include="SharpZipLib\Tar\TarInputStream.cs.meta" />
+    <Content Include="SharpZipLib\Tar\TarOutputStream.cs.meta" />
+    <Content Include="SharpZipLib\Zip.meta" />
+    <Content Include="SharpZipLib\Zip\Compression.meta" />
+    <Content Include="SharpZipLib\Zip\Compression\Deflater.cs.meta" />
+    <Content Include="SharpZipLib\Zip\Compression\DeflaterConstants.cs.meta" />
+    <Content Include="SharpZipLib\Zip\Compression\DeflaterEngine.cs.meta" />
+    <Content Include="SharpZipLib\Zip\Compression\DeflaterHuffman.cs.meta" />
+    <Content Include="SharpZipLib\Zip\Compression\DeflaterPending.cs.meta" />
+    <Content Include="SharpZipLib\Zip\Compression\Inflater.cs.meta" />
+    <Content Include="SharpZipLib\Zip\Compression\InflaterDynHeader.cs.meta" />
+    <Content Include="SharpZipLib\Zip\Compression\InflaterHuffmanTree.cs.meta" />
+    <Content Include="SharpZipLib\Zip\Compression\PendingBuffer.cs.meta" />
+    <Content Include="SharpZipLib\Zip\Compression\Streams.meta" />
+    <Content Include="SharpZipLib\Zip\Compression\Streams\DeflaterOutputStream.cs.meta" />
+    <Content Include="SharpZipLib\Zip\Compression\Streams\InflaterInputStream.cs.meta" />
+    <Content Include="SharpZipLib\Zip\Compression\Streams\OutputWindow.cs.meta" />
+    <Content Include="SharpZipLib\Zip\Compression\Streams\StreamManipulator.cs.meta" />
+    <Content Include="SharpZipLib\Zip\FastZip.cs.meta" />
+    <Content Include="SharpZipLib\Zip\IEntryFactory.cs.meta" />
+    <Content Include="SharpZipLib\Zip\WindowsNameTransform.cs.meta" />
+    <Content Include="SharpZipLib\Zip\ZipConstants.cs.meta" />
+    <Content Include="SharpZipLib\Zip\ZipEntry.cs.meta" />
+    <Content Include="SharpZipLib\Zip\ZipEntryFactory.cs.meta" />
+    <Content Include="SharpZipLib\Zip\ZipException.cs.meta" />
+    <Content Include="SharpZipLib\Zip\ZipExtraData.cs.meta" />
+    <Content Include="SharpZipLib\Zip\ZipFile.cs.meta" />
+    <Content Include="SharpZipLib\Zip\ZipHelperStream.cs.meta" />
+    <Content Include="SharpZipLib\Zip\ZipInputStream.cs.meta" />
+    <Content Include="SharpZipLib\Zip\ZipNameTransform.cs.meta" />
+    <Content Include="SharpZipLib\Zip\ZipOutputStream.cs.meta" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+</Project>
